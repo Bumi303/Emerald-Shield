@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <link rel="icon" href="emeraldshieldlogo_V2.png">
+    </head>
+    <body>
+            <!-- CSS -->
+        <style type="text/css">
+        table th, table td{
+        padding: 5px;
+        }
+        </style>
+
+        <!-- -------------------------------------------------------------   -->
+        <div id="test">
+            <input type="file" name="file" id="file" accept=".csv" > <br><br>
+            <input type="button" id="btnsubmit" value="Submit" onclick="readCSVFile();">
+            <fieldset>
+                <legend class="choice">Pick a stock</legend>
+                <button type="button" id="year" class="choice" onclick="sample_csv();">Apple</button>
+                <button type="button" id="year" class="choice" onclick="sample_csv('stocks\AMZN.csv');">Amazon</button>
+                <button type="button" id="year" class="choice" onclick="sample_csv('stocks\NVDA.csv');">Nvidia</button>
+                <button type="button" id="year" class="choice" onclick="sample_csv('stocks\QQQ.csv');">Invesco</button>
+                <button type="button" id="year" class="choice" onclick="sample_csv('stocks\VOO.csv');">Vangaurd</button>
+            </fieldset>
+            <fieldset>
+                <legend class="choice" style="color: rgb(0, 0, 0);">Time Frame</legend>
+                <button type="button" id="month" class="choice" onclick="month(1);">1 Month</button>
+                <button type="button" id="3month" class="choice" onclick="month(3);">3 Months</button>
+                <button type="button" id="6month" class="choice" onclick="month(6);">6 Months</button>
+                <button type="button" id="year" class="choice"  onclick="month(12);">Year</button>
+            </fieldset>
+        </div>
+    <!-- -------------------------------------------------------------   -->
+
+        <div class="parent"> 
+            <img src="emeraldshieldlogo_V2.png" alt="Logo" class="child_left">
+
+            <canvas id="myChart" style="width:100%;max-width:800px" class="child_middle"></canvas>
+            
+            <img src="emeraldshieldlogo_V2.png" alt="Logo" class="child_right">
+        </div>
+        
+        <!-- List CSV file data -->
+        <table id="tblcsvdata" border="1" style="border-collapse: collapse;" class="data_table">
+            <thead>
+                <tr class="table">
+                    <th>Open</th>
+                    <th>Date</th>
+                    <th>High</th>
+                    <th>Low</th>
+                    <th>Close</th>
+                    <th>Adj Close</th>
+                    <th>Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    <!-- -------------------------------------------------------------   -->
+
+
+        <script src="script.js"></script>
+        <script src="" async defer></script>
+    </body>
+</html>
